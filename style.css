@@ -76,11 +76,18 @@ h6 {
   isolation: isolate;
 }
 
+/* 
+========================================
+              VARIABLES
+========================================
+*/
+
 :root {
   --primary-text-color: #1f2937;
   --secondary-text-color: #4b5563;
 
   --accent-color: #1992d4;
+  --accent-text-color: #ffffff;
 
   --main-content-background-color: #e2e8f0;
 
@@ -105,8 +112,15 @@ h6 {
 html {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: var(--fw-regular);
+  color: var(--primary-text-color);
 }
+
+/* 
+========================================
+              MAIN-CONTAINER
+========================================
+*/
 
 .main-container {
   display: grid;
@@ -114,9 +128,11 @@ html {
   grid-template-rows: 70px 1fr;
 }
 
-.main-container > * {
-  border: 1px solid red;
-}
+/* 
+========================================
+              SIDEBAR
+========================================
+*/
 
 .sidebar {
   grid-column: 1;
@@ -179,12 +195,169 @@ html {
   fill: var(--sidebar-text-color);
 }
 
+/* 
+========================================
+              HEADER
+========================================
+*/
+
 .header {
   grid-column: 2;
   grid-row: 1;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin: 0 16px;
 }
+
+.header-left,
+.header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button > .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.search-form {
+  width: clamp(200px, 40vw, 500px);
+}
+
+.search-input-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+#search-input {
+  width: 100%;
+  height: 30px;
+  padding: 8px 12px;
+
+  background-color: var(--main-content-background-color);
+  border: none;
+  border-radius: 20px;
+
+  font-size: var(--fs-sm);
+}
+
+#search-input:focus {
+  outline: 2px solid var(--secondary-text-color);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-img {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+}
+
+.user-name {
+  margin-right: 20px;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+}
+
+/* 
+========================================
+              MAIN-CONTENT
+========================================
+*/
 
 .main-content {
   grid-column: 2;
   grid-row: 2;
+}
+
+/* 
+========================================
+              MAIN-CONTENT - HEADER
+========================================
+*/
+
+.home {
+  height: 100%;
+  width: 100%;
+  background-color: var(--main-content-background-color);
+}
+
+.home-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  height: 100px;
+  padding: 0 24px;
+  background-color: var(--header-background-color);
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+}
+
+.home-header-left,
+.home-header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.home-user-img {
+  border-radius: 100%;
+  width: 64px;
+  height: 64px;
+}
+
+.home-header-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.welcome-text {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
+
+.welcome-user-name {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+}
+
+.btn {
+  border: none;
+  border-radius: 20px;
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+
+  width: 100px;
+  height: 32px;
 }
