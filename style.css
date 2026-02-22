@@ -494,3 +494,40 @@ html {
               MAIN-CONTENT - TRENDING
 ========================================
 */
+
+.trending-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 20px;
+
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.trending-card {
+  display: flex;
+  gap: 12px;
+}
+.trending-card-user-img {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.trending-card-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.trending-card-username {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-regular);
+}
+
+.trending-card-user-title {
+  font-size: var(--fs-xs);
+  color: var(--secondary-text-color);
+}
