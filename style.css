@@ -370,8 +370,8 @@ html {
 
 .content {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 28px;
+  grid-template-columns: 2.75fr 1fr;
+  gap: 20px;
   padding: 16px;
 }
 
@@ -390,6 +390,7 @@ html {
 
 .section-title {
   font-size: var(--fs-md);
+  margin-bottom: 8px;
 }
 
 /* 
@@ -448,6 +449,45 @@ html {
               MAIN-CONTENT - ANNOUNCEMENTS
 ========================================
 */
+
+.announcements-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 28px;
+
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.announcement-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.announcement-card-title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+.announcement-card-description {
+  font-size: var(--fs-xs);
+  color: var(--secondary-text-color);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.horizontal-line-break {
+  border: none;
+  height: 1px;
+  background-color: var(--secondary-text-color);
+  opacity: 0.25;
+}
 
 /* 
 ========================================
