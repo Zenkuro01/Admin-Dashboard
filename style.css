@@ -84,7 +84,7 @@ h6 {
 
 :root {
   --primary-text-color: #1f2937;
-  --secondary-text-color: #4b5563;
+  --secondary-text-color: #656d79;
 
   --accent-color: #1992d4;
   --accent-text-color: #ffffff;
@@ -361,3 +361,96 @@ html {
   width: 100px;
   height: 32px;
 }
+
+/* 
+========================================
+              MAIN-CONTENT - CONTENT LAYOUT / STYLING
+========================================
+*/
+
+.content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 28px;
+  padding: 16px;
+}
+
+.projects {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.announcements {
+  grid-column: 2;
+}
+
+.trending {
+  grid-column: 2;
+}
+
+.section-title {
+  font-size: var(--fs-md);
+}
+
+/* 
+========================================
+              MAIN-CONTENT - PROJECTS
+========================================
+*/
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  background-color: var(--card-background-color);
+  padding: 24px 16px;
+
+  border-radius: 8px;
+  border-left: 8px solid var(--card-border-color);
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.project-card-title {
+  font-size: var(--fs-base);
+}
+
+.project-card-description {
+  font-size: var(--fs-xs);
+  color: var(--secondary-text-color);
+  flex: 1;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-card-actions {
+  display: flex;
+  align-self: end;
+  margin-top: 12px;
+}
+
+/* 
+========================================
+              MAIN-CONTENT - ANNOUNCEMENTS
+========================================
+*/
+
+/* 
+========================================
+              MAIN-CONTENT - TRENDING
+========================================
+*/
